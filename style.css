@@ -76,7 +76,7 @@ body {
   overflow: hidden;
 }
 .stars {
-  background: url('stars-bg.png');
+  background: url('assets/stars-bg.png');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -169,12 +169,13 @@ body {
 /* --- SKILLS CAROUSEL STYLES --- */
 .skills-description {
   max-width: 800px;
+  
   margin: 0 auto 50px;
   color: #bbb;
   line-height: 1.6;
 }
 .skills-carousel {
-  height:350px;
+  height: 350px;
   position: relative;
   display: flex;
   align-items: center;
@@ -502,7 +503,7 @@ body {
 footer {
     /* Assuming a dark background, either from the image or a solid color */
     background-color: #0d0d0d; 
-    background-image: url(footer-bg.png); /* Keep your background image */
+    background-image: url(assets/footer-bg.png); /* Keep your background image */
     background-size: cover;
     color: #ddd; /* Default text color for the footer */
     
@@ -615,3 +616,183 @@ footer {
 }
 
 
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+/* Tablets (<=1024px) */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .content {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 40px;
+  }
+
+  .text {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .illustration {
+    width: 300px;
+    height: 300px;
+  }
+
+  .skills-carousel {
+    padding: 20px;
+    height: auto;
+  }
+
+  .cards-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .skill-card {
+    width: 45%;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .contact-form {
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .contact-illustration img {
+    width: 280px;
+  }
+}
+
+/* Mobiles (<=768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hero {
+    height: auto;
+    padding-top: 150px;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .text h1 {
+    font-size: 2rem;
+  }
+
+  .illustration {
+    width: 220px;
+    height: 220px;
+  }
+
+  /* ---------- FIX SKILL CARDS MOBILE RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .skills-carousel {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .skill-card {
+   
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.03);
+    padding: 15px 0;
+    transition: transform 0.3s ease;
+  }
+
+  .skill-card img {
+    width: 70px;
+    height: auto;
+  }
+
+  .skill-card.active {
+    background: rgba(179, 121, 245, 0.2);
+    transform: scale(1.05);
+  }
+
+  .skill-info-box {
+    width: 100%;
+    max-width: 90%;
+    margin-top: 20px;
+    padding: 20px;
+  }
+}
+
+
+  .projects-container {
+    padding: 40px 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .education-section {
+    padding: 20px;
+  }
+
+  .table-container td {
+    display: block;
+    text-align: left;
+  }
+
+  .contact-section {
+    padding: 20px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-details {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+
+  .footer-contact {
+    text-align: center;
+  }
+}
