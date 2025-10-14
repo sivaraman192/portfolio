@@ -76,7 +76,7 @@ body {
   overflow: hidden;
 }
 .stars {
-  background: url('stars-bg.png');
+  background:url('stars-bg.png');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -872,4 +872,5 @@ footer {
 }
     
 }
+
 
