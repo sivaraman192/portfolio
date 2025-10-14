@@ -8,14 +8,15 @@
   <script defer src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/c1cc3e0046.js" crossorigin="anonymous"></script> 
+  <script src="https://kit.fontawesome.com/c1cc3e0046.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <!-- ===== NAVBAR ===== -->
   <header class="navbar">
     <div class="logo">
       <h2>Sivaraman</h2>
-      <p>web Developer</p>
+      <p>Web Developer</p>
     </div>
     <nav>
       <ul class="nav-links">
@@ -25,15 +26,22 @@
         <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li> 
       </ul>
+
+     <div class="navbar-menu-toggle" onclick="showNavbar()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="26" height="26" fill="white">
+    <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+  </svg>
+</div>
+
     </nav>
+
     <div class="social-links">
-    <a href="#" aria-label="LinkedIn" class="social-icon">
+      <a href="#" aria-label="LinkedIn" class="social-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.366-4-3.235-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
         </svg>
     </a>
-    
-    <a href="https://github.com/sivaraman192?tab=repositories" target="_blank" class="social-icon github-icon" aria-label="GitHub">
+      <a href="https://github.com/sivaraman192?tab=repositories" target="_blank" class="social-icon github-icon" aria-label="GitHub">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
             <path d="M12 .5C5.73.5.75 5.48.75 11.76c0 4.9 3.17 9.06 7.57 10.53.55.1.75-.24.75-.53
             0-.26-.01-1.12-.02-2.03-3.08.67-3.73-1.49-3.73-1.49-.5-1.27-1.22-1.61-1.22-1.61
@@ -45,15 +53,158 @@
             7.57-10.53C23.25 5.48 18.27.5 12 .5z"/>
         </svg>
     </a>
-    <a href="siva resume.pdf" class="resume-btn">Resume</a>
-</div>
-      
-      
-    
+      <a href="assets/siva resume.pdf" class="resume-btn">Resume</a>
+    </div>
   </header>
 
+  <!-- ===== SIDE NAVBAR ===== -->
+   
+  <div class="side-navbar">
+   <p style="text-align:right;" onclick="closeNavbar()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="22" height="22" fill="white">
+    <path d="M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z"/>
+  </svg>
+</p>
+
+    <div class="side-navbar-links">
+      <p class="side-navbar-link"><a href="#home">Home</a></p>
+      <p class="side-navbar-link"><a href="#skills">Skills</a></p>
+      <p class="side-navbar-link"><a href="#contact">Contact</a></p>        
+    </div>
+  </div>
+
+  <!-- ===== HERO SECTION ===== -->
   <section id="home" class="hero">
     <div class="stars"></div>
+    <div class="content">
+      <div class="text">
+        <span class="tag">Welcome to my Portfolio</span>
+        <h1>Hi! I'm <span>Sivaraman</span><br>Web Developer</h1>
+        <p>
+          A passionate Web Developer who loves creating intuitive, dynamic user experiences powered by robust backends.
+          I specialize in MERN Stack development and enjoy exploring new technologies and problem solving.
+        </p>
+      </div>
+
+      <div class="illustration">
+        <img src="assets/astronaut2.png" class="astronaut" alt="Astronaut">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <p class="skills-description">
+      A Web Developer is expected to design and build responsive, user-friendly, and scalable web applications using modern web technologies.
+    </p>
+
+    <div class="skills-carousel">
+      <a href="#" class="carousel-arrow left-arrow"><i class="fas fa-chevron-left"></i>←</a>
+      <div class="cards-wrapper">
+        <div class="skill-card"><img src="assets/vscode.svg" alt="VS Code"><p>VS Code</p></div>
+        <div class="skill-card"><img src="assets/html.svg" alt="HTML"><p>HTML</p></div>
+        <div class="skill-card"><img src="assets/css.svg" alt="CSS"><p>CSS</p></div>
+        <div class="skill-card"><img src="assets/javascript.svg" alt="JavaScript"><p>JavaScript</p></div>
+        <div class="skill-card"><img src="assets/react.svg" alt="React"><p>React</p></div>
+        <div class="skill-card"><img src="assets/bootstrap.svg" alt="Bootstrap"><p>Bootstrap</p></div>
+      </div>
+      <a href="#" class="carousel-arrow right-arrow"><i class="fas fa-chevron-right"></i>→</a>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card" onclick="toggleCard(this)">
+        <div class="project-front">
+          <img src="assets/demo.png" alt="Chat App Screenshot">
+          <h3>Chat App</h3>
+        </div>
+        <div class="project-back">
+          <h3>Chat App</h3>
+          <p>Chat app using MERN Stack with Socket.io for real-time messaging, login, and DB storage.</p>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="toggleCard(this)">
+        <div class="project-front">
+          <img src="assets/e.com.png" alt="E-commerce Screenshot">
+          <h3>E-commerce Website</h3>
+        </div>
+        <div class="project-back">
+          <h3>E-commerce Website</h3>
+          <p>Responsive online store with user authentication and cart functionality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" class="section education-section">
+    <h2>Education & Certifications</h2>
+    <div class="table-container">
+      <table>
+        <tr>
+          <td>Full Stack Development (MERN) - GUVI</td>
+          <td>AUG 2022 - JAN 2023</td>
+        </tr>
+        <tr>
+          <td>B.E (Computer Science) - Prince Shri Venkateshwara College</td>
+          <td>Expected 2026</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section contact-section">
+    <div class="contact-content">
+      <div class="contact-illustration">
+        <img src="assets/contact-img.svg" alt="Contact Illustration">
+      </div>
+      <form class="contact-form">
+        <h2>Get In Touch</h2>
+        <div class="form-row">
+          <input type="text" placeholder="First Name" required>
+          <input type="text" placeholder="Last Name" required>
+        </div>
+        <div class="form-row">
+          <input type="email" placeholder="Email Address" required>
+          <input type="tel" placeholder="Phone No.">
+        </div>
+        <textarea placeholder="Message" rows="5" required></textarea>
+        <button type="submit" class="download-btn send-btn">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-details">
+      <div class="footer-logo">
+        <h2>Sivaraman</h2>
+        <p>Web Developer</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-contact">
+          <p><i class="fas fa-phone"></i> 9342913781</p>
+          <p><i class="fas fa-envelope"></i> sivaraman.official13@gmail.com</p>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/sivaraman192?tab=repositories" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">© 2025 Sivaraman. All Rights Reserved</p>
+  </footer>
+</body>
+</html>
+
     <div class="content">
       <div class="text">
         <span class="tag">Welcome to my Portfolio</span>
@@ -64,9 +215,25 @@
         </p>
       </div>
 
+      <!-- Side Navbar -->
+
+<div class="side-navbar">
+    <p style="text-align: right;" onclick="closeNavbar()">
+        <i class="fa-solid fa-xmark"></i>
+    </p>
+
+
+    <div class="side-navbar-links">
+        <p class="side-navbar-link"><a href="">Home</a></p>
+        <p class="side-navbar-link"><a href="collection.html">Collection</a></p>
+        <p class="side-navbar-link"><a href="contact.html">Contact</a></p>        
+    </div >
+
+</div>
+
       <div class="illustration">
         <!-- <img src="assets/planet.png" class="planet" alt="Planet"> -->
-        <img src="astronaut2.png" class="astronaut" alt="Astronaut">
+        <img src="assets/astronaut2.png" class="astronaut" alt="Astronaut">
         <!-- <img src="assets/rocket.png" class="rocket" alt="Rocket"> -->
       </div>
     </div>
@@ -84,22 +251,22 @@
       
       <div class="cards-wrapper">
           <div class="skill-card">
-            <img src="vscode.svg" alt="VS Code Icon"><p>vsCode</p>
+            <img src="assets/vscode.svg" alt="VS Code Icon"><p>vsCode</p>
           </div>
           <div class="skill-card">
-            <img src="html.svg" alt="HTML Icon"><p>HTML</p>
+            <img src="assets/html.svg" alt="HTML Icon"><p>HTML</p>
           </div>
           <div class="skill-card">
-            <img src="css.svg" alt="CSS Icon"><p>CSS</p>
+            <img src="assets/css.svg" alt="CSS Icon"><p>CSS</p>
           </div>
           <div class="skill-card">
-            <img src="javascript.svg" alt="JavaScript Icon"><p>JavaScript</p>
+            <img src="assets/javascript.svg" alt="JavaScript Icon"><p>JavaScript</p>
           </div>
           <div class="skill-card">
-            <img src="react.svg" alt="React Icon"><p>React</p>
+            <img src="assets/react.svg" alt="React Icon"><p>React</p>
           </div>
           <div class="skill-card">
-            <img src="bootstrap.svg" alt="Bootstrap Icon"><p>BootStrap</p>
+            <img src="assets/bootstrap.svg" alt="Bootstrap Icon"><p>BootStrap</p>
           </div>
          
       </div>
@@ -123,7 +290,7 @@
  <section id="projects"  class="projects-container">
   <div class="project-card" onclick="toggleCard(this)">
     <div class="project-front">
-      <img src="demo.png" alt="Chat App Screenshot">
+      <img src="assets/demo.png" alt="Chat App Screenshot">
       <h3>Chat App</h3>
     </div> 
     <div class="project-back">
@@ -142,7 +309,7 @@
 
   <div class="project-card" onclick="toggleCard(this)">
     <div class="project-front">
-      <img src="e.com.png" alt="E-commerce Screenshot">
+      <img src="assets/e.com.png" alt="E-commerce Screenshot">
       <h3>E-commerce Website</h3>
     </div>
 
@@ -199,7 +366,7 @@
   <section id="contact" class="section contact-section">
     <div class="contact-content">
       <div class="contact-illustration">
-        <img src="contact-img.svg" alt="Contact illustration">
+        <img src="assets/contact-img.svg" alt="Contact illustration">
       </div>
       <form class="contact-form">
         <h2>Get In Touch</h2>
