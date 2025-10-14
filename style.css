@@ -76,7 +76,7 @@ body {
   overflow: hidden;
 }
 .stars {
-  background: url('assets/stars-bg.png');
+  background: url('stars-bg.png');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -503,7 +503,7 @@ body {
 footer {
     /* Assuming a dark background, either from the image or a solid color */
     background-color: #0d0d0d; 
-    background-image: url(assets/footer-bg.png); /* Keep your background image */
+    background-image: url(footer-bg.png); /* Keep your background image */
     background-size: cover;
     color: #ddd; /* Default text color for the footer */
     
@@ -809,3 +809,4 @@ footer {
     text-align: center;
   }
 }
+
