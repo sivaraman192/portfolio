@@ -76,7 +76,7 @@ body {
   overflow: hidden;
 }
 .stars {
-  background: url('stars-bg.png');
+  background: url('assets/stars-bg.png');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -503,7 +503,7 @@ body {
 footer {
     /* Assuming a dark background, either from the image or a solid color */
     background-color: #0d0d0d; 
-    background-image: url(footer-bg.png); /* Keep your background image */
+    background-image: url(assets/footer-bg.png); /* Keep your background image */
     background-size: cover;
     color: #ddd; /* Default text color for the footer */
     
@@ -707,8 +707,7 @@ footer {
     width: 220px;
     height: 220px;
   }
-
- /* ---------- FIX SKILL CARDS MOBILE RESPONSIVE ---------- */
+/* ---------- FIX SKILL CARDS MOBILE RESPONSIVE ---------- */
 @media (max-width: 768px) {
   .skills-carousel {
     flex-direction: column;
@@ -723,7 +722,6 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.4s ease-in-out;
     width: 100%;
   }
 
@@ -749,7 +747,6 @@ footer {
 
   .carousel-arrow {
     position: absolute;
-    top: unset;
     bottom: 20px;
     background-color: #b379f5;
     color: white;
@@ -808,4 +805,70 @@ footer {
   .footer-contact {
     text-align: center;
   }
+}
+
+
+
+.navbar-menu-toggle{
+    display: none;
+}
+
+
+
+/*side-navbar */
+.side-navbar{
+    background-color: #1D232C;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -60%;
+    padding: 20px;
+    color: #fff;
+    transition: 2s; 
+    z-index: 1000;
+      
+}
+
+.side-navbar i{
+    cursor: pointer;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    width: 2.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: #fff;
+    color: black;
+
+}
+.side-navbar-link{
+    margin-bottom: 30px;
+}
+.side-navbar-links a{
+    text-decoration: none;
+    color: white;
+}
+
+.side-navbar-links a:hover{
+    text-decoration:underline;
+   
+}
+
+
+@media screen and (max-width:720px){
+    .navbar-menu-toggle{
+        display: block;
+        margin-left: 600px;
+        
+          }
+    .navbar-links{
+        display: none ;
+    } 
+  .social-links{
+    display: none;
+  }
+.nav-links{
+  display: none;
+}
+    
 }
