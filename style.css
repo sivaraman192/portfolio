@@ -708,49 +708,62 @@ footer {
     height: 220px;
   }
 
-  /* ---------- FIX SKILL CARDS MOBILE RESPONSIVE ---------- */
+ /* ---------- FIX SKILL CARDS MOBILE RESPONSIVE ---------- */
 @media (max-width: 768px) {
   .skills-carousel {
     flex-direction: column;
-    height: auto;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
     padding: 20px;
+    position: relative;
   }
 
   .cards-wrapper {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    transition: transform 0.4s ease-in-out;
+    width: 100%;
   }
 
   .skill-card {
-   
-    width: 90%;
-    max-width: 300px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 280px;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    background: rgba(255,255,255,0.03);
-    padding: 15px 0;
-    transition: transform 0.3s ease;
-  }
-
-  .skill-card img {
-    width: 70px;
-    height: auto;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    padding: 20px 0;
   }
 
   .skill-card.active {
-    background: rgba(179, 121, 245, 0.2);
+    display: flex;
+    background: rgba(179, 121, 245, 0.15);
     transform: scale(1.05);
   }
 
-  .skill-info-box {
-    width: 100%;
-    max-width: 90%;
-    margin-top: 20px;
-    padding: 20px;
+  .carousel-arrow {
+    position: absolute;
+    top: unset;
+    bottom: 20px;
+    background-color: #b379f5;
+    color: white;
+  }
+
+  .left-arrow {
+    left: 30%;
+  }
+
+  .right-arrow {
+    right: 30%;
   }
 }
+
 
 
   .projects-container {
