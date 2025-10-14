@@ -1,4 +1,4 @@
-// script.js
+
 
 // 1. NAVBAR ACTIVE LINK ON SCROLL
 const navLinks = document.querySelectorAll(".nav-links a");
@@ -31,56 +31,78 @@ window.addEventListener("scroll", () => {
 // 2. SKILLS CAROUSEL LOGIC
 
 const wrapper = document.querySelector(".cards-wrapper");
+const cards = document.querySelectorAll(".skill-card");
 const leftArrow = document.querySelector(".left-arrow");
 const rightArrow = document.querySelector(".right-arrow");
 
-if (wrapper && leftArrow && rightArrow) {
-    const cards = wrapper.querySelectorAll(".skill-card");
-    
-    // Values must match CSS: Card width (230px) + Gap (30px) = 260px
-    const CARD_GAP = 30; 
-    const CARD_WIDTH = 230; 
-    const SLIDE_DISTANCE = CARD_WIDTH + CARD_GAP; 
+let currentIndex = 0;
 
-    let currentIndex = 0; 
-    const totalItems = cards.length; 
-    
-    // This value must match how many cards are visible in the CSS design
-    const visibleItems = 3; 
-
-    // Function to update the carousel position
-    function updateCarousel() {
-        const transformValue = -currentIndex * SLIDE_DISTANCE;
-        wrapper.style.transform = `translateX(${transformValue}px)`;
-
-        // Control arrow visibility/opacity
-        leftArrow.style.opacity = currentIndex === 0 ? '0.3' : '1';
-        // Disable the right arrow when the last set of visible cards is shown
-        rightArrow.style.opacity = currentIndex >= totalItems - visibleItems ? '0.3' : '1';
-    }
-
-    // Event Listeners for Arrows
-    rightArrow.addEventListener('click', (e) => {
-        e.preventDefault(); 
-        if (currentIndex < totalItems - visibleItems) {
-            currentIndex++;
-            updateCarousel();
-        }
-    });
-
-    leftArrow.addEventListener('click', (e) => {
-        e.preventDefault(); 
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
-    });
-
-    // Initialize the carousel position when the page loads
-    updateCarousel();
+function showCard(index) {
+  cards.forEach((card, i) => {
+    card.classList.remove("active");
+    if (i === index) card.classList.add("active");
+  });
 }
+
+// For PC (horizontal scroll)
+function updateCarouselPC() {
+  const CARD_WIDTH = 230;
+  const CARD_GAP = 30;
+  const SLIDE_DISTANCE = CARD_WIDTH + CARD_GAP;
+  const transformValue = -currentIndex * SLIDE_DISTANCE;
+  wrapper.style.transform = `translateX(${transformValue}px)`;
+}
+
+// Detect screen size and handle accordingly
+function handleCarousel() {
+  if (window.innerWidth <= 768) {
+    // Mobile: one card at a time
+    showCard(currentIndex);
+
+    leftArrow.onclick = (e) => {
+      e.preventDefault();
+      currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+      showCard(currentIndex);
+    };
+
+    rightArrow.onclick = (e) => {
+      e.preventDefault();
+      currentIndex = (currentIndex + 1) % cards.length;
+      showCard(currentIndex);
+    };
+  } else {
+    // Desktop: scroll horizontally
+    leftArrow.onclick = (e) => {
+      e.preventDefault();
+      if (currentIndex > 0) currentIndex--;
+      updateCarouselPC();
+    };
+
+    rightArrow.onclick = (e) => {
+      e.preventDefault();
+      if (currentIndex < cards.length - 3) currentIndex++;
+      updateCarouselPC();
+    };
+  }
+}
+
+handleCarousel();
+window.addEventListener("resize", handleCarousel);
 
 
  function toggleCard(card) {
     card.classList.toggle('active');
  }
+
+
+ // --- MOBILE SKILL CLICK FIX ---
+skillCards.forEach(card => {
+  card.addEventListener("touchstart", () => {
+    skillCards.forEach(c => c.classList.remove("active"));
+    card.classList.add("active");
+
+    const skillName = card.querySelector("p").textContent.trim();
+    skillTitle.textContent = skillName;
+    skillDesc.textContent = skillData[skillName] || "No details available.";
+  });
+});
