@@ -858,7 +858,7 @@ footer {
 @media screen and (max-width:720px){
     .navbar-menu-toggle{
         display: block;
-        margin-left: 600px;
+        margin-left: 400px;
         
           }
     .navbar-links{
@@ -872,5 +872,6 @@ footer {
 }
     
 }
+
 
 
