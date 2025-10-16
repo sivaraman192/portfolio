@@ -78,11 +78,15 @@ handleCarousel();
 window.addEventListener("resize", handleCarousel);
 
 // ===== PROJECT CARD FLIP =====
-function toggleCard(card) {
-  card.classList.toggle("active");
+// function toggleCard(card) {
+//   card.classList.toggle("active");
+// }
+
+function showNavbar() {
+  document.querySelector('.side-navbar').classList.add('active');
 }
 
-// ===== SIDE NAVBAR =====
-const sidenav = document.querySelector(".side-navbar");
-function showNavbar() { sidenav.style.left = "0"; }
-function closeNavbar() { sidenav.style.left = "-60%"; }
+function closeNavbar() {
+  document.querySelector('.side-navbar').classList.remove('active');
+}
+
