@@ -76,7 +76,7 @@ body {
   overflow: hidden;
 }
 .stars {
-  background:url('stars-bg.png');
+  background: url('assets/stars-bg.png');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -503,7 +503,7 @@ body {
 footer {
     /* Assuming a dark background, either from the image or a solid color */
     background-color: #0d0d0d; 
-    background-image: url(footer-bg.png); /* Keep your background image */
+    background-image: url(assets/footer-bg.png); /* Keep your background image */
     background-size: cover;
     color: #ddd; /* Default text color for the footer */
     
@@ -809,72 +809,90 @@ footer {
 
 
 
-.navbar-menu-toggle{
-    display: none;
+
+
+/* ===== SIDE NAVBAR ===== */
+.side-navbar {
+  position: fixed;
+  top: 0;
+  right:-250px; /* Hidden by default */
+  width: 250px;
+  height: 100%;
+  background: rgba(5, 6, 23, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: -2px 0 10px rgba(0,0,0,0.4);
+  transition: right 0.4s ease;
+  z-index: 9999;
+  padding: 30px 20px;
 }
 
-
-
-/*side-navbar */
-.side-navbar{
-    background-color: #1D232C;
-    width: 50%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: -60%;
-    padding: 20px;
-    color: #fff;
-    transition: 2s; 
-    z-index: 1000;
-      
+.side-navbar.active {
+  right: 0; /* Slide in */
 }
 
-.side-navbar i{
+.side-navbar p svg {
+  cursor: pointer;
+}
+
+.side-navbar-links {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.side-navbar-link a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.side-navbar-link a:hover {
+  color: #b379f5;
+}
+
+/* Hide menu toggle on large screens */
+.navbar-menu-toggle {
+  display: none;
+ 
+  position: fixed;
+  top: 20px;
+  right: 30px; /* Change from left to right */
+  z-index: 1000;
+  cursor: pointer;
+
+
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide desktop links */
+  }
+
+  .navbar-menu-toggle {
+    display: block;
     cursor: pointer;
-    height: 2.5rem;
-    line-height: 2.5rem;
-    width: 2.5rem;
-    text-align: center;
-    font-size: 1.2rem;
-    background-color: #fff;
-    color: black;
+  }
 
-}
-.side-navbar-link{
-    margin-bottom: 30px;
-}
-.side-navbar-links a{
-    text-decoration: none;
-    color: white;
-}
-
-.side-navbar-links a:hover{
-    text-decoration:underline;
-   
-}
-
-
-@media screen and (max-width:720px){
-    .navbar-menu-toggle{
-        display: block;
-      
-        
-          }
-    .navbar-links{
-        display: none ;
-    } 
-  .social-links{
+  .social-links {
     display: none;
   }
-.nav-links{
-  display: none;
+
+  .hero .content {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .illustration {
+    width: 300px;
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .text h1 {
+    font-size: 2.4rem;
+  }
 }
-    
-}
-
-
-
-
-
-
